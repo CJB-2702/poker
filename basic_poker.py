@@ -97,7 +97,7 @@ class Hand:
         #check for duplicate based hands
         ranks = sorted(duplicates.keys(), reverse=True)
         high_cards = ranks[:3]
-        high_three = False
+        high_three = 0
         pairs = []
         for k in ranks:
             if duplicates[k]==4:
