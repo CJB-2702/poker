@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <div id="top_row">
+        <form id="uploadForm" method="POST" enctype="multipart/form-data" action="/upload_image">
+            <input type="file" id="imageFile" name="image">
+            <button type="submit">Upload Image</button>
+        </form>
+        <h1>{{best_hand}}</h1>
+    </div>  
+    <div id="all_images">
+        <div id="hand_container">
+            <img src="{{ url_for('static', filename='uploads/hand_image.jpg') }}"></img>
+        </div>
+        <div id="card_images">
+            {% for image in images %}
+                <img src="{{ url_for('static', filename=image) }}">
+            {% endfor %}
+        </div> 
+    </div> 
+</body>
+</html>

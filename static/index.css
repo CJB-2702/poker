@@ -1,0 +1,61 @@
+
+  /* General styles */
+  body {
+    font-family: sans-serif;  /* Choose a preferred font family */
+    margin: 0;  /* Remove default body margin */
+    padding: 20px;  /* Add some padding for content */
+  }
+  
+
+  #top_row {
+    display: flex;
+  }
+  /* Form styling */
+  #uploadForm {
+    display: flex;  /* Arrange form elements horizontally */
+    align-items: center;  /* Align elements vertically */
+    margin-bottom: 20px;  /* Add space below the form */
+    width: 500px;
+  }
+  
+  #imageFile,
+  #uploadForm button {
+    padding: 10px 15px;  /* Consistent padding for input and button */
+    border: 1px solid #ccc;  /* Light border for elements */
+    border-radius: 5px;  /* Rounded corners for a modern look */
+    margin-right: 10px;  /* Space between input and button */
+  }
+  
+  #imageFile {
+    cursor: pointer;  /* Indicate clickable file input */
+  }
+  
+  #uploadForm button {
+    background-color: #4CAF50;  /* Green color for submit button */
+    color: white;  /* White text for button */
+    transition: background-color 0.2s ease-in-out;  /* Smooth hover effect */
+  }
+  
+  #uploadForm button:hover {
+    background-color: #3e8e41;  /* Darker green on button hover */
+  }
+  
+
+
+
+
+
+
+#all_images {
+  display: flex;
+}
+
+#hand_container img{
+  width: 400;
+  padding: 10px;
+}
+
+#card_images img{
+  width:200px;
+  padding: 10px;
+}
