@@ -18,15 +18,4 @@ form.addEventListener('submit', function(event) {
     method: 'POST',
     body: formData
   })
-  .then(response => response.json())  // Expect JSON response from Flask
-  .then(data => {
-    alert('Image uploaded successfully!');  // Display success message
-    console.log(data);
-    for (const image of data) {
-      const img = document.createElement('img');
-      img.src = image;
-      imagePreview.appendChild(img);
-    }
-  })
-  .catch(error => console.error(error));
 });

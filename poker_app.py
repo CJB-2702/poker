@@ -20,11 +20,8 @@ UPLOAD_FOLDER = script_dir / 'static/uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 
-def byte_encode_cv2_image(img):    
-  _, buffer_original = cv2.imencode('.jpg', img)  # Use JPG for Base64 encoding
-  return base64.b64encode(buffer_original.tobytes()).decode('utf-8')
 
-def get_cv_intermediate_images(np_image):
+def process_image(np_image):
     poker_hand=Hand()
     icd = ImageCardDetector(np_image=np_image)
     processed_hand_image=icd.get_hand_detection_cv_image()
@@ -72,7 +69,7 @@ def upload_image():
             image = cv2.imdecode(np.frombuffer(image_data, np.uint8), cv2.IMREAD_COLOR)
 
             try:
-                hand_image, card_images, hand = get_cv_intermediate_images(image)
+                hand_image, card_images, hand = process_image(image)
                 win_str, high_card, secondary_high_card =hand.check_hand()
                 rank_converter={11:'J',12:'Q',13:'K',14:'A'}
                 high_card= rank_converter.get(high_card,high_card)
